@@ -1,0 +1,827 @@
+
+Administrator@SRV-Pramod MINGW64 ~
+$ cd C:
+
+Administrator@SRV-Pramod MINGW64 /c
+$ mkdir gitdemo
+
+Administrator@SRV-Pramod MINGW64 /c
+$ ls
+'$Recycle.Bin'/   Demo/                      pagefile.sys            ProgramData/                  temp/
+ 22.csv          'Documents and Settings'@   PerfLogs/               Recovery/                     Users/
+ bootmgr          gitdemo/                  'Program Files'/         ser.csv                       Windows/
+ BOOTNXT         'New Text Document.txt'    'Program Files (x86)'/  'System Volume Information'/
+
+Administrator@SRV-Pramod MINGW64 /c
+$ git clone https://github.com/navinyambre/VMWare_Inventory.git
+Cloning into 'VMWare_Inventory'...
+remote: Enumerating objects: 3, done.
+remote: Counting objects: 100% (3/3), done.
+remote: Compressing objects: 100% (2/2), done.
+remote: Total 3 (delta 0), reused 0 (delta 0), pack-reused 0
+Unpacking objects: 100% (3/3), 2.41 KiB | 352.00 KiB/s, done.
+
+Administrator@SRV-Pramod MINGW64 /c
+$ git status
+fatal: not a git repository (or any of the parent directories): .git
+
+Administrator@SRV-Pramod MINGW64 /c
+$ cd C:VMWare_Inventory/
+
+Administrator@SRV-Pramod MINGW64 /c/VMWare_Inventory (master)
+$ git status
+On branch master
+Your branch is up to date with 'origin/master'.
+
+nothing to commit, working tree clean
+
+Administrator@SRV-Pramod MINGW64 /c/VMWare_Inventory (master)
+$ touch test.txt
+
+Administrator@SRV-Pramod MINGW64 /c/VMWare_Inventory (master)
+$ add test.txt
+bash: add: command not found
+
+Administrator@SRV-Pramod MINGW64 /c/VMWare_Inventory (master)
+$ git add test.txt
+
+Administrator@SRV-Pramod MINGW64 /c/VMWare_Inventory (master)
+$ git status
+On branch master
+Your branch is up to date with 'origin/master'.
+
+Changes to be committed:
+  (use "git restore --staged <file>..." to unstage)
+        new file:   test.txt
+
+
+Administrator@SRV-Pramod MINGW64 /c/VMWare_Inventory (master)
+$ git commit -m "This is my first commit"
+
+*** Please tell me who you are.
+
+Run
+
+  git config --global user.email "you@example.com"
+  git config --global user.name "Your Name"
+
+to set your account's default identity.
+Omit --global to set the identity only in this repository.
+
+fatal: unable to auto-detect email address (got 'Administrator@SRV-Pramod.(none)')
+
+Administrator@SRV-Pramod MINGW64 /c/VMWare_Inventory (master)
+$ git config --global user.email "navinyambre@yahoo.com"
+
+Administrator@SRV-Pramod MINGW64 /c/VMWare_Inventory (master)
+$ git config  --global user.name "Navinya"
+
+Administrator@SRV-Pramod MINGW64 /c/VMWare_Inventory (master)
+$ git commit -m "This is my first commit"
+[master dbeafa0] This is my first commit
+ 1 file changed, 0 insertions(+), 0 deletions(-)
+ create mode 100644 test.txt
+
+Administrator@SRV-Pramod MINGW64 /c/VMWare_Inventory (master)
+$ vi test.txt
+
+Administrator@SRV-Pramod MINGW64 /c/VMWare_Inventory (master)
+$ git status
+On branch master
+Your branch is ahead of 'origin/master' by 1 commit.
+  (use "git push" to publish your local commits)
+
+Changes not staged for commit:
+  (use "git add <file>..." to update what will be committed)
+  (use "git restore <file>..." to discard changes in working directory)
+        modified:   test.txt
+
+no changes added to commit (use "git add" and/or "git commit -a")
+
+Administrator@SRV-Pramod MINGW64 /c/VMWare_Inventory (master)
+$ git push
+Enumerating objects: 4, done.
+Counting objects: 100% (4/4), done.
+Delta compression using up to 2 threads
+Compressing objects: 100% (2/2), done.
+Writing objects: 100% (3/3), 278 bytes | 278.00 KiB/s, done.
+Total 3 (delta 0), reused 0 (delta 0)
+To https://github.com/navinyambre/VMWare_Inventory.git
+   e0b5a51..dbeafa0  master -> master
+
+Administrator@SRV-Pramod MINGW64 /c/VMWare_Inventory (master)
+$ vi test.txt
+
+Administrator@SRV-Pramod MINGW64 /c/VMWare_Inventory (master)
+$ git status
+On branch master
+Your branch is up to date with 'origin/master'.
+
+Changes not staged for commit:
+  (use "git add <file>..." to update what will be committed)
+  (use "git restore <file>..." to discard changes in working directory)
+        modified:   test.txt
+
+no changes added to commit (use "git add" and/or "git commit -a")
+
+Administrator@SRV-Pramod MINGW64 /c/VMWare_Inventory (master)
+$ git diff
+warning: LF will be replaced by CRLF in test.txt.
+The file will have its original line endings in your working directory
+diff --git a/test.txt b/test.txt
+index e69de29..020f2c7 100644
+--- a/test.txt
++++ b/test.txt
+@@ -0,0 +1,3 @@
++this is test
++
++this is test 2
+
+Administrator@SRV-Pramod MINGW64 /c/VMWare_Inventory (master)
+$ git push
+Everything up-to-date
+
+Administrator@SRV-Pramod MINGW64 /c/VMWare_Inventory (master)
+$ git co
+commit   config
+
+Administrator@SRV-Pramod MINGW64 /c/VMWare_Inventory (master)
+$ git commit test.txt
+warning: LF will be replaced by CRLF in test.txt.
+The file will have its original line endings in your working directory
+warning: LF will be replaced by CRLF in test.txt.
+The file will have its original line endings in your working directory
+Aborting commit due to empty commit message.
+
+Administrator@SRV-Pramod MINGW64 /c/VMWare_Inventory (master)
+$ vi test.txt
+
+Administrator@SRV-Pramod MINGW64 /c/VMWare_Inventory (master)
+$ git commit test.txt
+warning: LF will be replaced by CRLF in test.txt.
+The file will have its original line endings in your working directory
+warning: LF will be replaced by CRLF in test.txt.
+The file will have its original line endings in your working directory
+Aborting commit due to empty commit message.
+
+Administrator@SRV-Pramod MINGW64 /c/VMWare_Inventory (master)
+$ git commit test.txt -m "this is new commit"
+warning: LF will be replaced by CRLF in test.txt.
+The file will have its original line endings in your working directory
+warning: LF will be replaced by CRLF in test.txt.
+The file will have its original line endings in your working directory
+[master cb2883b] this is new commit
+ 1 file changed, 4 insertions(+)
+
+Administrator@SRV-Pramod MINGW64 /c/VMWare_Inventory (master)
+$ git push
+Enumerating objects: 5, done.
+Counting objects: 100% (5/5), done.
+Delta compression using up to 2 threads
+Compressing objects: 100% (2/2), done.
+Writing objects: 100% (3/3), 294 bytes | 294.00 KiB/s, done.
+Total 3 (delta 0), reused 0 (delta 0)
+To https://github.com/navinyambre/VMWare_Inventory.git
+   dbeafa0..cb2883b  master -> master
+
+Administrator@SRV-Pramod MINGW64 /c/VMWare_Inventory (master)
+$ git status
+On branch master
+Your branch is up to date with 'origin/master'.
+
+nothing to commit, working tree clean
+
+Administrator@SRV-Pramod MINGW64 /c/VMWare_Inventory (master)
+$ vi test.txt
+
+Administrator@SRV-Pramod MINGW64 /c/VMWare_Inventory (master)
+$ git add --all
+warning: LF will be replaced by CRLF in test.txt.
+The file will have its original line endings in your working directory
+
+Administrator@SRV-Pramod MINGW64 /c/VMWare_Inventory (master)
+$ git status
+On branch master
+Your branch is up to date with 'origin/master'.
+
+Changes to be committed:
+  (use "git restore --staged <file>..." to unstage)
+        modified:   test.txt
+
+
+Administrator@SRV-Pramod MINGW64 /c/VMWare_Inventory (master)
+$ git reset
+Unstaged changes after reset:
+M       test.txt
+
+Administrator@SRV-Pramod MINGW64 /c/VMWare_Inventory (master)
+$ git status
+On branch master
+Your branch is up to date with 'origin/master'.
+
+Changes not staged for commit:
+  (use "git add <file>..." to update what will be committed)
+  (use "git restore <file>..." to discard changes in working directory)
+        modified:   test.txt
+
+no changes added to commit (use "git add" and/or "git commit -a")
+
+Administrator@SRV-Pramod MINGW64 /c/VMWare_Inventory (master)
+$ cat test.txt
+this is test
+
+this is test 3
+123
+
+
+asdfjasdfjkawsdlkf
+qasdsdwf
+
+
+Administrator@SRV-Pramod MINGW64 /c/VMWare_Inventory (master)
+$ git log
+commit cb2883b82057d58b653279a93a39b95bae98f926 (HEAD -> master, origin/master, origin/HEAD)
+Author: Navinya <navinyambre@yahoo.com>
+Date:   Sat Feb 1 13:26:05 2020 +0530
+
+    this is new commit
+
+commit dbeafa0ae73be2ab5d52bbcda2c28b6ea9c33a20
+Author: Navinya <navinyambre@yahoo.com>
+Date:   Sat Feb 1 12:37:25 2020 +0530
+
+    This is my first commit
+
+commit e0b5a51d74203889d27d172464a1b6a9185cbce5
+Author: navinyambre <58359842+navinyambre@users.noreply.github.com>
+Date:   Fri Jan 24 21:44:25 2020 +0530
+
+    Create Code
+
+Administrator@SRV-Pramod MINGW64 /c/VMWare_Inventory (master)
+$ git reset dbeafa0ae73be2ab5d52bbcda2c28b6ea9c33a20
+Unstaged changes after reset:
+M       test.txt
+
+Administrator@SRV-Pramod MINGW64 /c/VMWare_Inventory (master)
+$ cat test.txt
+this is test
+
+this is test 3
+123
+
+
+asdfjasdfjkawsdlkf
+qasdsdwf
+
+
+Administrator@SRV-Pramod MINGW64 /c/VMWare_Inventory (master)
+$ cat test.txt
+this is test
+
+this is test 3
+123
+
+
+asdfjasdfjkawsdlkf
+qasdsdwf
+
+
+Administrator@SRV-Pramod MINGW64 /c/VMWare_Inventory (master)
+$ git revert
+usage: git revert [<options>] <commit-ish>...
+   or: git revert <subcommand>
+
+    --quit                end revert or cherry-pick sequence
+    --continue            resume revert or cherry-pick sequence
+    --abort               cancel revert or cherry-pick sequence
+    --skip                skip current commit and continue
+    --cleanup <mode>      how to strip spaces and #comments from message
+    -n, --no-commit       don't automatically commit
+    -e, --edit            edit the commit message
+    -s, --signoff         add Signed-off-by:
+    -m, --mainline <parent-number>
+                          select mainline parent
+    --rerere-autoupdate   update the index with reused conflict resolution if possible
+    --strategy <strategy>
+                          merge strategy
+    -X, --strategy-option <option>
+                          option for merge strategy
+    -S, --gpg-sign[=<key-id>]
+                          GPG sign commit
+
+
+Administrator@SRV-Pramod MINGW64 /c/VMWare_Inventory (master)
+$ git commit -a -m "this is latest commit"
+warning: LF will be replaced by CRLF in test.txt.
+The file will have its original line endings in your working directory
+[master 02b0a86] this is latest commit
+ 1 file changed, 9 insertions(+)
+
+Administrator@SRV-Pramod MINGW64 /c/VMWare_Inventory (master)
+$ git revert
+usage: git revert [<options>] <commit-ish>...
+   or: git revert <subcommand>
+
+    --quit                end revert or cherry-pick sequence
+    --continue            resume revert or cherry-pick sequence
+    --abort               cancel revert or cherry-pick sequence
+    --skip                skip current commit and continue
+    --cleanup <mode>      how to strip spaces and #comments from message
+    -n, --no-commit       don't automatically commit
+    -e, --edit            edit the commit message
+    -s, --signoff         add Signed-off-by:
+    -m, --mainline <parent-number>
+                          select mainline parent
+    --rerere-autoupdate   update the index with reused conflict resolution if possible
+    --strategy <strategy>
+                          merge strategy
+    -X, --strategy-option <option>
+                          option for merge strategy
+    -S, --gpg-sign[=<key-id>]
+                          GPG sign commit
+
+
+Administrator@SRV-Pramod MINGW64 /c/VMWare_Inventory (master)
+$ git reset dbeafa0ae73be2ab5d52bbcda2c28b6ea9c33a20 --hard
+HEAD is now at dbeafa0 This is my first commit
+
+Administrator@SRV-Pramod MINGW64 /c/VMWare_Inventory (master)
+$ git sta
+stage    stash    status
+
+Administrator@SRV-Pramod MINGW64 /c/VMWare_Inventory (master)
+$ git sta
+stage    stash    status
+
+Administrator@SRV-Pramod MINGW64 /c/VMWare_Inventory (master)
+$ git status
+On branch master
+Your branch is behind 'origin/master' by 1 commit, and can be fast-forwarded.
+  (use "git pull" to update your local branch)
+
+nothing to commit, working tree clean
+
+Administrator@SRV-Pramod MINGW64 /c/VMWare_Inventory (master)
+$ cat test.txt
+
+Administrator@SRV-Pramod MINGW64 /c/VMWare_Inventory (master)
+$ git log
+commit dbeafa0ae73be2ab5d52bbcda2c28b6ea9c33a20 (HEAD -> master)
+Author: Navinya <navinyambre@yahoo.com>
+Date:   Sat Feb 1 12:37:25 2020 +0530
+
+    This is my first commit
+
+commit e0b5a51d74203889d27d172464a1b6a9185cbce5
+Author: navinyambre <58359842+navinyambre@users.noreply.github.com>
+Date:   Fri Jan 24 21:44:25 2020 +0530
+
+    Create Code
+
+Administrator@SRV-Pramod MINGW64 /c/VMWare_Inventory (master)
+$ git
+Display all 64 possibilities? (y or n)
+
+Administrator@SRV-Pramod MINGW64 /c/VMWare_Inventory (master)
+$ cat Code
+<#
+  Version:        1.0
+  Author:         Navinya Ambre
+  Creation Date:  20/01/2020
+#>
+
+Import-module VMware.VimAutomation.Core
+Import-module VMware.VimAutomation.Vds
+Import-module VMware.VimAutomation.Cloud
+#Import-module VMware.VimAutomation.PCloud
+Import-module VMware.VimAutomation.Cis.Core
+Import-module VMware.VimAutomation.Storage
+Import-module VMware.VimAutomation.HorizonView
+#Import-module VMware.VimAutomation.HA
+Import-module VMware.VimAutomation.vROps
+Import-module VMware.VumAutomation
+Import-module VMware.DeployAutomation
+Import-module VMware.ImageBuilder
+Import-module VMware.VimAutomation.License
+
+read-host -assecurestring | convertfrom-securestring | out-file F:\Script\Sec.txt
+$password = get-content F:\Script\Sec.txt | convertto-securestring
+$credential_Amer = new-object -typename System.Management.Automation.PSCredential -argumentlist domain\username, $password
+$credential_Emea = new-object -typename System.Management.Automation.PSCredential -argumentlist domain\username, $password
+$AMERVcenters = Get-VIServer amchavic02, amdcavic01 -Credential $credential_amer
+$EMEAVcenters = Get-VIServer emffavic01, empaavic01 -Credential $credential_emea
+$Vcenters = $AMERVcenters  + $EMEAVcenters
+$VMArray = @()
+$i=0
+foreach($Vcenter  in $Vcenters)
+{
+
+$VMs = Get-VM -Server $Vcenter -Name * | Get-View
+
+foreach ($VM in $VMs)
+{
+$VMName = $VM.Name
+$OSName = $VM.summary.config.guestFullName
+$PowerState = $VM.Runtime.PowerState
+$Datacenter = Get-Datacenter -VM $VM.Name
+
+
+$Results = New-Object Object
+$Results | Add-Member -Type NoteProperty -Name 'VMName' -Value $VMName
+$Results | Add-Member -Type NoteProperty -Name 'OSName' -Value $OSName
+$Results | Add-Member -Type NoteProperty -Name 'PowerState' -Value $PowerState
+$Results | Add-Member -Type NoteProperty -Name 'VCenterName' -Value $VIServer
+$Results | Add-Member -Type NoteProperty -Name 'DatacenterName' -Value $Datacenter
+
+$VMArray += $Results
+
+$i++
+
+}
+}
+$VMArray | Export-Csv -Path F:\Script\VMlist.csv -NoTypeInformation
+
+
+$VMCount = $VMArray.Count
+
+$WindowsMachinesList = $VMArray | Where-Object {$_.OSName -like '*Windows*'} #added
+$poweredOnWindowsMachines=$WindowsMachinesList | Where-Object {$_.PowerState -eq 'poweredOn'}#added
+$poweredOnWindowsMachines |ForEach-Object{if(($_.vcenterName.Name -eq 'amchavic02') -or ($_.vcenterName.Name -eq 'amdcavic01')){$_ | Add-Member -MemberType NoteProperty -Name "Region" -Value "Amer"} else {$_ | Add-Member -MemberType NoteProperty -Name "Region" -Value "Emea"}}  #added
+$poweredOnWindowsMachines | Select-Object VMName,Region,OSName | Export-Csv F:\Script\VMware_Data.csv -NoTypeInformation
+$poweredOnWindowsMachines | Select-Object VMName,Region,OSName | Export-Csv \\amertrofs02\Kelly\IT\Data\Sogeti_Documents\Inventory_Audit\VMware_Data.csv -NoTypeInformation
+#$poweredOnWindowsMachines1=$poweredOnWindowsMachines
+#$poweredOnWindowsMachines1[620] | ForEach-Object{if(($_.vcenterName.Name -eq 'amchavic02') -or ($_.vcenterName.Name -eq 'amdcavic01')){$_ | Add-Member -MemberType NoteProperty -Name "Region" -Value "Amer"} else {$_ | Add-Member -MemberType NoteProperty -Name "Region" -Value "Emea"}}
+
+$WindowsMachines = ($VMArray | Where-Object {$_.OSName -like '*Windows*'}).count
+$LinuxMachines = ($VMArray | Where-Object {$_.OSName -notlike '*Windows*'}).count
+
+$SummaryArray = @()
+
+$Summary = New-Object Object
+$Summary | Add-Member -Type NoteProperty -Name 'Total Number of VMs' -Value $VMCount
+$Summary | Add-Member -Type NoteProperty -Name 'Total Number of Windows Machines' -Value $WindowsMachines
+$Summary | Add-Member -Type NoteProperty -Name 'Total Number of Linux Machines' -Value $LinuxMachines
+#$Summary | Add-Member -Type NoteProperty -Name 'VCenterName' -Value $VIServer
+
+$SummaryArray += $Summary
+
+
+$SummaryCount = @()
+
+foreach($dc in Get-Datacenter){
+    foreach($cluster in Get-Cluster -Location $dc){
+        foreach($esx in Get-VMHost -Location $cluster){
+            $VMCounts = Get-VM -Location $esx |
+            Select @{N='Datacenter';E={$dc.Name}},
+                @{N='Cluster';E={$cluster.Name}},
+                @{N='VMhost';E={$esx.Name}},Name
+                $SummaryCount = $SummaryCount + $VMCounts
+        }}}
+
+$Chicago_CH3 = ($SummaryCount | Where-Object {$_.Datacenter -like '*Chicago_CH3*'}).count
+$Ashburn_DC10 = ($SummaryCount | Where-Object {$_.Datacenter -like '*Ashburn_DC10*'}).count
+$Troy_HQ = ($SummaryCount | Where-Object {$_.Datacenter -like '*Troy HQ*'}).count
+$Brazil = ($SummaryCount | Where-Object {$_.Datacenter -like '*Brazil*'}).count
+$Mexico = ($SummaryCount | Where-Object {$_.Datacenter -like '*Mexico*'}).count
+$Frankfurt = ($SummaryCount | Where-Object {$_.Datacenter -like '*Frankfurt*'}).count
+$Paris = ($SummaryCount | Where-Object {$_.Datacenter -like '*Paris*'}).count
+
+
+$SummaryInv = New-Object Object
+$SummaryInv | Add-Member -Type NoteProperty -Name 'Chicago' -Value $Chicago_CH3
+$SummaryInv | Add-Member -Type NoteProperty -Name 'Ashburn' -Value $Ashburn_DC10
+$SummaryInv | Add-Member -Type NoteProperty -Name 'Troy' -Value $Troy_HQ
+$SummaryInv | Add-Member -Type NoteProperty -Name 'Brazil' -Value $Brazil
+$SummaryInv | Add-Member -Type NoteProperty -Name 'Mexico' -Value $Mexico
+$SummaryInv | Add-Member -Type NoteProperty -Name 'Frankfurt' -Value $Frankfurt
+$SummaryInv | Add-Member -Type NoteProperty -Name 'Paris' -Value $Paris
+
+
+
+
+
+
+$smtpServer = “your smtp server”
+$smtpFrom = “vminventory@yourdomain”
+$smtpTo = “receiver mail ID”
+$date = Date
+$messageSubject = “All Datacenter inventory for Virtual Machines”
+
+$message = New-Object System.Net.Mail.MailMessage $smtpfrom, $smtpto
+$message.Subject = $messageSubject
+$message.IsBodyHTML = $true
+
+
+
+$Header = @"
+
+<style>
+  body {
+    font-family: "Calibri";
+    font-size: 12pt;
+    color: #000000;
+    }
+  th, td {
+    border: 1px solid #e57300;
+    border-collapse: collapse;
+    padding: 5px;
+    }
+  th {
+    font-size: 2.0em;
+    text-align: left;
+    background-color: #003366;
+    color: #ffffff;
+    }
+  td {
+    color: #000000;
+    }
+  .even { background-color: #ffffff; }
+  .odd { background-color: #bfbfbf; }
+</style>
+
+"@
+
+
+$message.Body = $SummaryArray + $SummaryInv | ConvertTo-Html -Head $Header -As TABLE -precontent "Hello All,<br>
+<br>
+This is Monthly inventory Report for VCenter. Please find attached report.
+ <br>
+ <br>
+ Date: $date
+" -PostContent $Header
+
+$emailattachment = 'F:\Script\VMlist.csv'
+$attachment = New-Object System.Net.Mail.Attachment($emailattachment, 'text/plain')
+$message.Attachments.Add($attachment)
+
+
+$smtp = New-Object Net.Mail.SmtpClient($smtpServer)
+$smtp.Send($message)
+
+Administrator@SRV-Pramod MINGW64 /c/VMWare_Inventory (master)
+$ git log
+commit dbeafa0ae73be2ab5d52bbcda2c28b6ea9c33a20 (HEAD -> master)
+Author: Navinya <navinyambre@yahoo.com>
+Date:   Sat Feb 1 12:37:25 2020 +0530
+
+    This is my first commit
+
+commit e0b5a51d74203889d27d172464a1b6a9185cbce5
+Author: navinyambre <58359842+navinyambre@users.noreply.github.com>
+Date:   Fri Jan 24 21:44:25 2020 +0530
+
+    Create Code
+
+Administrator@SRV-Pramod MINGW64 /c/VMWare_Inventory (master)
+$ touch navinya.txt
+
+Administrator@SRV-Pramod MINGW64 /c/VMWare_Inventory (master)
+$ git add navinya.txt
+
+Administrator@SRV-Pramod MINGW64 /c/VMWare_Inventory (master)
+$ vi navinya.txt
+
+Administrator@SRV-Pramod MINGW64 /c/VMWare_Inventory (master)
+$ git status
+On branch master
+Your branch is behind 'origin/master' by 1 commit, and can be fast-forwarded.
+  (use "git pull" to update your local branch)
+
+Changes to be committed:
+  (use "git restore --staged <file>..." to unstage)
+        new file:   navinya.txt
+
+Changes not staged for commit:
+  (use "git add <file>..." to update what will be committed)
+  (use "git restore <file>..." to discard changes in working directory)
+        modified:   navinya.txt
+
+
+Administrator@SRV-Pramod MINGW64 /c/VMWare_Inventory (master)
+$ git commit navinya.txt -m "this is commit 1"
+warning: LF will be replaced by CRLF in navinya.txt.
+The file will have its original line endings in your working directory
+warning: LF will be replaced by CRLF in navinya.txt.
+The file will have its original line endings in your working directory
+[master bf183ad] this is commit 1
+ 1 file changed, 1 insertion(+)
+ create mode 100644 navinya.txt
+
+Administrator@SRV-Pramod MINGW64 /c/VMWare_Inventory (master)
+$ git log
+commit bf183ad69ec6ed785a911a8d286f11d13fd107bf (HEAD -> master)
+Author: Navinya <navinyambre@yahoo.com>
+Date:   Sat Feb 1 13:45:17 2020 +0530
+
+    this is commit 1
+
+commit dbeafa0ae73be2ab5d52bbcda2c28b6ea9c33a20
+Author: Navinya <navinyambre@yahoo.com>
+Date:   Sat Feb 1 12:37:25 2020 +0530
+
+    This is my first commit
+
+commit e0b5a51d74203889d27d172464a1b6a9185cbce5
+Author: navinyambre <58359842+navinyambre@users.noreply.github.com>
+Date:   Fri Jan 24 21:44:25 2020 +0530
+
+    Create Code
+
+Administrator@SRV-Pramod MINGW64 /c/VMWare_Inventory (master)
+$ vi navinya.txt
+
+Administrator@SRV-Pramod MINGW64 /c/VMWare_Inventory (master)
+$ git commit navinya.txt -m "this is commit 2"
+warning: LF will be replaced by CRLF in navinya.txt.
+The file will have its original line endings in your working directory
+warning: LF will be replaced by CRLF in navinya.txt.
+The file will have its original line endings in your working directory
+[master 8fe1e76] this is commit 2
+ 1 file changed, 2 insertions(+)
+
+Administrator@SRV-Pramod MINGW64 /c/VMWare_Inventory (master)
+$ git log
+commit 8fe1e7613fc8085a2ba7875c1a426879931bd82e (HEAD -> master)
+Author: Navinya <navinyambre@yahoo.com>
+Date:   Sat Feb 1 13:46:30 2020 +0530
+
+    this is commit 2
+
+commit bf183ad69ec6ed785a911a8d286f11d13fd107bf
+Author: Navinya <navinyambre@yahoo.com>
+Date:   Sat Feb 1 13:45:17 2020 +0530
+
+    this is commit 1
+
+commit dbeafa0ae73be2ab5d52bbcda2c28b6ea9c33a20
+Author: Navinya <navinyambre@yahoo.com>
+Date:   Sat Feb 1 12:37:25 2020 +0530
+
+    This is my first commit
+
+commit e0b5a51d74203889d27d172464a1b6a9185cbce5
+Author: navinyambre <58359842+navinyambre@users.noreply.github.com>
+Date:   Fri Jan 24 21:44:25 2020 +0530
+
+    Create Code
+
+Administrator@SRV-Pramod MINGW64 /c/VMWare_Inventory (master)
+$ git diff
+HEAD            master          ORIG_HEAD       origin/HEAD     origin/master
+
+Administrator@SRV-Pramod MINGW64 /c/VMWare_Inventory (master)
+$ git diff
+
+Administrator@SRV-Pramod MINGW64 /c/VMWare_Inventory (master)
+$ git diff dbeafa0ae73be2ab5d52bbcda2c28b6ea9c33a20 e0b5a51d74203889d27d172464a1b6a9185cbce5
+diff --git a/test.txt b/test.txt
+deleted file mode 100644
+index e69de29..0000000
+
+Administrator@SRV-Pramod MINGW64 /c/VMWare_Inventory (master)
+$ git diff 8fe1e7613fc8085a2ba7875c1a426879931bd82e bf183ad69ec6ed785a911a8d286f11d13fd107bf
+diff --git a/navinya.txt b/navinya.txt
+index 2aab702..3ab96cf 100644
+--- a/navinya.txt
++++ b/navinya.txt
+@@ -1,3 +1 @@
+ navinya
+-
+-ambre
+
+Administrator@SRV-Pramod MINGW64 /c/VMWare_Inventory (master)
+$ git branch
+* master
+
+Administrator@SRV-Pramod MINGW64 /c/VMWare_Inventory (master)
+$ git branch QA
+
+Administrator@SRV-Pramod MINGW64 /c/VMWare_Inventory (master)
+$ git branch
+  QA
+* master
+
+Administrator@SRV-Pramod MINGW64 /c/VMWare_Inventory (master)
+$ git checkout qa
+Switched to branch 'qa'
+
+Administrator@SRV-Pramod MINGW64 /c/VMWare_Inventory (qa)
+$ git branch
+  QA
+  master
+
+Administrator@SRV-Pramod MINGW64 /c/VMWare_Inventory (qa)
+$ touch qatest.txt
+
+Administrator@SRV-Pramod MINGW64 /c/VMWare_Inventory (qa)
+$ git add qatest.txt
+
+Administrator@SRV-Pramod MINGW64 /c/VMWare_Inventory (qa)
+$ vi qatest.txt
+
+Administrator@SRV-Pramod MINGW64 /c/VMWare_Inventory (qa)
+$ git commit qatest.txt -m "changes in QA test"
+warning: LF will be replaced by CRLF in qatest.txt.
+The file will have its original line endings in your working directory
+warning: LF will be replaced by CRLF in qatest.txt.
+The file will have its original line endings in your working directory
+[qa a3ea707] changes in QA test
+ 1 file changed, 1 insertion(+)
+ create mode 100644 qatest.txt
+
+Administrator@SRV-Pramod MINGW64 /c/VMWare_Inventory (qa)
+$ push qatest.txt
+bash: push: command not found
+
+Administrator@SRV-Pramod MINGW64 /c/VMWare_Inventory (qa)
+$ git push
+fatal: The current branch qa has no upstream branch.
+To push the current branch and set the remote as upstream, use
+
+    git push --set-upstream origin qa
+
+
+Administrator@SRV-Pramod MINGW64 /c/VMWare_Inventory (qa)
+$ git push --set --upstream origin qa
+error: unknown option `upstream'
+usage: git push [<options>] [<repository> [<refspec>...]]
+
+    -v, --verbose         be more verbose
+    -q, --quiet           be more quiet
+    --repo <repository>   repository
+    --all                 push all refs
+    --mirror              mirror all refs
+    -d, --delete          delete refs
+    --tags                push tags (can't be used with --all or --mirror)
+    -n, --dry-run         dry run
+    --porcelain           machine-readable output
+    -f, --force           force updates
+    --force-with-lease[=<refname>:<expect>]
+                          require old value of ref to be at this value
+    --recurse-submodules[=(check|on-demand|no)]
+                          control recursive pushing of submodules
+    --thin                use thin pack
+    --receive-pack <receive-pack>
+                          receive pack program
+    --exec <receive-pack>
+                          receive pack program
+    -u, --set-upstream    set upstream for git pull/status
+    --progress            force progress reporting
+    --prune               prune locally removed refs
+    --no-verify           bypass pre-push hook
+    --follow-tags         push missing but relevant tags
+    --signed[=(yes|no|if-asked)]
+                          GPG sign the push
+    --atomic              request atomic transaction on remote side
+    -o, --push-option <server-specific>
+                          option to transmit
+    -4, --ipv4            use IPv4 addresses only
+    -6, --ipv6            use IPv6 addresses only
+
+
+Administrator@SRV-Pramod MINGW64 /c/VMWare_Inventory (qa)
+$ git push --set-upstream origin qa
+Enumerating objects: 10, done.
+Counting objects: 100% (10/10), done.
+Delta compression using up to 2 threads
+Compressing objects: 100% (6/6), done.
+Writing objects: 100% (9/9), 829 bytes | 414.00 KiB/s, done.
+Total 9 (delta 1), reused 0 (delta 0)
+remote: Resolving deltas: 100% (1/1), done.
+remote:
+remote: Create a pull request for 'qa' on GitHub by visiting:
+remote:      https://github.com/navinyambre/VMWare_Inventory/pull/new/qa
+remote:
+To https://github.com/navinyambre/VMWare_Inventory.git
+ * [new branch]      qa -> qa
+Branch 'qa' set up to track remote branch 'qa' from 'origin'.
+
+Administrator@SRV-Pramod MINGW64 /c/VMWare_Inventory (qa)
+$ git clone https://github.com/navinyambre/Classwork-day1.git
+Cloning into 'Classwork-day1'...
+remote: Enumerating objects: 3, done.
+remote: Counting objects: 100% (3/3), done.
+remote: Compressing objects: 100% (3/3), done.
+remote: Total 3 (delta 0), reused 0 (delta 0), pack-reused 0
+Unpacking objects: 100% (3/3), 793 bytes | 132.00 KiB/s, done.
+
+Administrator@SRV-Pramod MINGW64 /c/VMWare_Inventory (qa)
+$ touch test.txt
+
+Administrator@SRV-Pramod MINGW64 /c/VMWare_Inventory (qa)
+$ git add test.txt
+
+Administrator@SRV-Pramod MINGW64 /c/VMWare_Inventory (qa)
+$ vi test.txt
+
+Administrator@SRV-Pramod MINGW64 /c/VMWare_Inventory (qa)
+$ git branch TEST
+
+Administrator@SRV-Pramod MINGW64 /c/VMWare_Inventory (qa)
+$ git remote -v
+origin  https://github.com/navinyambre/VMWare_Inventory.git (fetch)
+origin  https://github.com/navinyambre/VMWare_Inventory.git (push)
+
+Administrator@SRV-Pramod MINGW64 /c/VMWare_Inventory (qa)
+$
